@@ -58,12 +58,16 @@ const handleMenu = () => {
 };
 const handleScrollEffect = function () {
   const titles = [...document.querySelectorAll(".page__title")];
+  const projects = [...document.querySelectorAll(".project")];
   const checkHigh = (el, c) => {
     if (window.innerHeight + window.pageYOffset >= el.offsetTop + 100) {
       el.classList.add(c);
     }
   };
   window.addEventListener("scroll", () => {
+    projects.forEach((project) => {
+      checkHigh(project, "project--show");
+    });
     titles.forEach((title) => {
       checkHigh(title, "page__title--isActive");
     });
@@ -89,22 +93,22 @@ const handleProjectsEffect = function () {
       };
       if (mouse.fTop < element.elFT + element.elMY) {
         if (x < 7.5) {
-          x += 0.4;
+          x += 0.3;
         }
       }
       if (mouse.fTop > element.elFT + element.elMY) {
         if (x > -7.5) {
-          x -= 0.4;
+          x -= 0.3;
         }
       }
       if (mouse.fLeft < element.elFL + element.elMX) {
         if (y > -7.5) {
-          y -= 0.4;
+          y -= 0.3;
         }
       }
       if (mouse.fLeft > element.elFL + element.elMX) {
         if (y < 7.5) {
-          y += 0.4;
+          y += 0.3;
         }
       }
       project.style.transform = `perspective(700px) rotateY(${y.toFixed()}deg) rotateX(${x.toFixed()}deg) scale3d(1, 1, 1)`;
@@ -114,6 +118,7 @@ const handleProjectsEffect = function () {
     });
   });
 };
+
 window.addEventListener("load", () => {
   handleMenu();
   handleScrollEffect();

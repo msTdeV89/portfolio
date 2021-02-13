@@ -16,11 +16,19 @@ html {
   color: #eeeeee;
 }
 
-html,
-body,
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .container {
-  height: 100%;
-  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -39,11 +47,6 @@ p {
   font-weight: 300;
   line-height: 1.5;
   font-size: 16px;
-}
-
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
 }
 
 .page {
@@ -254,6 +257,169 @@ html::-webkit-scrollbar-thumb {
     text-align: center;
     max-width: 75%;
   }
+}
+
+.contact__info {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+.contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__inputGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contact__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 100px auto 20px;
+  max-width: 600px;
+}
+
+.contact__socials h5 {
+  margin-bottom: 20px;
+}
+
+.contact__socials li {
+  margin: 10px 0;
+}
+
+.contact__socials a,
+.contact__socials p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18;
+}
+
+.contact__socials a span,
+.contact__socials p span {
+  color: #68a7ff;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.contact__socials a:hover p,
+.contact__socials a .contact__email,
+.contact__socials p:hover p,
+.contact__socials p .contact__email {
+  opacity: 0.6;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  margin: 10px 0 7.5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  resize: none;
+  outline: transparent;
+  border-radius: 10px;
+  background: #111111;
+  -webkit-box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #282828;
+          box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #282828;
+}
+
+.contact input:focus + label,
+.contact textarea:focus + label {
+  color: #68a7ff;
+}
+
+.contact__err, .contact__succ {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact__err--show, .contact__succ--show {
+  opacity: 1;
+}
+
+.contact__err {
+  color: red;
+}
+
+.contact__succ {
+  color: green;
+}
+
+.contact__label {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.contact .btn {
+  margin: 30px 0;
+  font-size: 20px;
+}
+
+.footer {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-family: "Russo One", arial, sans-serif;
+  color: #68a7ff;
+}
+
+.footer span {
+  color: grey;
 }
 
 .header {
@@ -642,6 +808,17 @@ html::-webkit-scrollbar-thumb {
   -webkit-box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #282828;
           box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #282828;
   margin: 0 10px 50px;
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.project--show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .project:hover .project__title,
@@ -669,7 +846,7 @@ html::-webkit-scrollbar-thumb {
      object-fit: contain;
 }
 
-.project__title, .project__subtitle {
+.project__title, .project__subtitle, .project__progress {
   position: absolute;
   z-index: 2;
   left: 50%;
@@ -686,6 +863,14 @@ html::-webkit-scrollbar-thumb {
   text-align: center;
   width: 90%;
   top: 60%;
+}
+
+.project__progress {
+  top: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
 }
 
 .project__shade {
@@ -720,7 +905,11 @@ html::-webkit-scrollbar-thumb {
   width: 45%;
 }
 
-.project__btns .btn span {
+.project__btns .btn:hover span {
+  opacity: 0.6;
+}
+
+.project__btns .btn span:nth-child(2) {
   color: #68a7ff;
 }
 
@@ -744,6 +933,9 @@ html::-webkit-scrollbar-thumb {
 @media (min-width: 1024px) {
   .project {
     width: 500px;
+  }
+  .project .btn {
+    padding: 15px 0;
   }
   .project--app {
     width: 300px;

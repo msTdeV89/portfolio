@@ -2,6 +2,13 @@
   width: 320px;
   @include boxshadow;
   margin: 0 10px 50px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: 1s ease-in-out;
+  &--show {
+    opacity: 1;
+    transform: translateY(0);
+  }
   &:hover &__title,
   &:hover &__subtitle {
     opacity: 0;
@@ -23,7 +30,8 @@
     }
   }
   &__title,
-  &__subtitle {
+  &__subtitle,
+  &__progress {
     position: absolute;
     z-index: 2;
     left: 50%;
@@ -37,6 +45,13 @@
     text-align: center;
     width: 90%;
     top: 60%;
+  }
+  &__progress {
+    top: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
   }
   &__shade {
     position: absolute;
@@ -53,7 +68,10 @@
     .btn {
       padding: 7.5px 0;
       width: 45%;
-      span {
+      &:hover span {
+        opacity: 0.6;
+      }
+      span:nth-child(2) {
         color: $secondary;
       }
     }
@@ -76,6 +94,9 @@
 @media (min-width: 1024px) {
   .project {
     width: 500px;
+    .btn {
+      padding: 15px 0;
+    }
   }
   .project--app {
     width: 300px;
