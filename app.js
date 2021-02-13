@@ -93,22 +93,22 @@ const handleProjectsEffect = function () {
       };
       if (mouse.fTop < element.elFT + element.elMY) {
         if (x < 7.5) {
-          x += 0.3;
+          x += 1;
         }
       }
       if (mouse.fTop > element.elFT + element.elMY) {
         if (x > -7.5) {
-          x -= 0.3;
+          x -= 1;
         }
       }
       if (mouse.fLeft < element.elFL + element.elMX) {
         if (y > -7.5) {
-          y -= 0.3;
+          y -= 1;
         }
       }
       if (mouse.fLeft > element.elFL + element.elMX) {
         if (y < 7.5) {
-          y += 0.3;
+          y += 1;
         }
       }
       project.style.transform = `perspective(700px) rotateY(${y.toFixed()}deg) rotateX(${x.toFixed()}deg) scale3d(1, 1, 1)`;
