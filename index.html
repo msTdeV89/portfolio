@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@300;400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+            integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <link rel="stylesheet" href='./css/styles.css'>
+        <title>msT Portfolio</title>
+    </head>
+
+    <body>
+        <div class="shade"></div>
+        <header class="header">
+            <div class="header__wrap">
+                <div class="header__logo">
+                    <a href="#">
+                        <img src="assets/logoBlack.svg" alt="mst">
+                        <p><span>&#60;</span>&#160;msT&#160;<span>&#47;&#62;</span></p>
+                    </a>
+                </div>
+                <nav class="menu menu-mobile">
+                    <button class=" far fa-times-circle"></button>
+                    <ul>
+                        <li>
+                            <a class="isActive" href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__bars">
+                    <span class="header__bar"></span>
+                    <span class="header__bar"></span>
+                    <span class="header__bar"></span>
+                </button>
+            </div>
+        </header>
+        <main class="container">
+            <section class="hero" id="home">
+                <div class="hero__wrap">
+                    <div class="hero__text">
+                        <h1>Robert Kaczmarek</h1>
+                        <h3>Front-End Developer</h3>
+                        <p>Learn, Code, Don't give up.</p>
+                    </div>
+                    <div class="hero__image">
+                        <img src="assets/avatar.svg" alt="avatar">
+                    </div>
+                    <a href="#contact" class="btn"><span>Contact</span></a>
+                    <div class="hero__waves">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                            <path fill="#0099ff" fill-opacity=".4"
+                                d="M0,288L0,160L62.6,160L62.6,256L125.2,256L125.2,96L187.8,96L187.8,32L250.4,32L250.4,192L313,192L313,128L375.7,128L375.7,128L438.3,128L438.3,0L500.9,0L500.9,64L563.5,64L563.5,256L626.1,256L626.1,128L688.7,128L688.7,0L751.3,0L751.3,192L813.9,192L813.9,160L876.5,160L876.5,32L939.1,32L939.1,0L1001.7,0L1001.7,128L1064.3,128L1064.3,224L1127,224L1127,288L1189.6,288L1189.6,224L1252.2,224L1252.2,96L1314.8,96L1314.8,224L1377.4,224L1377.4,192L1440,192L1440,320L1377.4,320L1377.4,320L1314.8,320L1314.8,320L1252.2,320L1252.2,320L1189.6,320L1189.6,320L1127,320L1127,320L1064.3,320L1064.3,320L1001.7,320L1001.7,320L939.1,320L939.1,320L876.5,320L876.5,320L813.9,320L813.9,320L751.3,320L751.3,320L688.7,320L688.7,320L626.1,320L626.1,320L563.5,320L563.5,320L500.9,320L500.9,320L438.3,320L438.3,320L375.7,320L375.7,320L313,320L313,320L250.4,320L250.4,320L187.8,320L187.8,320L125.2,320L125.2,320L62.6,320L62.6,320L0,320L0,320Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <section class="page about" id="about">
+                <h3 class="page__title">About Me</h3>
+                <div class="page__wrap">
+                    <h5>I'm Robert, <span>nice to meet you!</span></h5>
+
+                </div>
+            </section>
+            <section class="page portfolio" id="portfolio">
+                <h3 class="page__title">My work</h3>
+                <div class="page__wrap">
+
+                </div>
+            </section>
+            <section class="page contact" id="contact">
+                <div class="page__wrap">
+
+                </div>
+                <h3 class="page__title">In touch</h3>
+            </section>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+
+</html>

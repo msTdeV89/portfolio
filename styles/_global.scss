@@ -1,0 +1,92 @@
+html {
+  font-family: Montserrat, arial, sans-serif;
+  background-color: $main;
+  scroll-behavior: smooth;
+}
+html,
+body,
+.container {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.page {
+  padding: 50px 15px 15px;
+  &__wrap {
+    padding-top: 25px;
+  }
+  &__title {
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 8px;
+      background-color: $secondary;
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+.shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  z-index: 900;
+  &--menuIsOpen {
+    visibility: visible;
+  }
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  background: 0;
+  outline: none;
+}
+.btn {
+  @include boxshadow;
+  text-align: center;
+  padding: 15px 0;
+  width: 200px;
+  transition: 0.275s ease-in-out;
+  background-color: $main;
+  z-index: 2;
+  &:hover span {
+    opacity: 0.6;
+  }
+}
+html::-webkit-scrollbar-track {
+  background-color: $main;
+}
+html::-webkit-scrollbar {
+  width: 10px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: $secondary;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
