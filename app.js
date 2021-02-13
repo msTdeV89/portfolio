@@ -56,7 +56,20 @@ const handleMenu = () => {
     }
   });
 };
-
+const handleScrollEffect = function () {
+  const titles = [...document.querySelectorAll(".page__title")];
+  const checkHigh = (el, c) => {
+    if (window.innerHeight + window.pageYOffset >= el.offsetTop + 100) {
+      el.classList.add(c);
+    }
+  };
+  window.addEventListener("scroll", () => {
+    titles.forEach((title) => {
+      checkHigh(title, "page__title--isActive");
+    });
+  });
+};
 window.addEventListener("load", () => {
   handleMenu();
+  handleScrollEffect();
 });

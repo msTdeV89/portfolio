@@ -2,6 +2,7 @@ html {
   font-family: Montserrat, arial, sans-serif;
   background-color: $main;
   scroll-behavior: smooth;
+  color: $font;
 }
 html,
 body,
@@ -9,18 +10,37 @@ body,
   height: 100%;
   width: 100%;
 }
+h1 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 18px;
+}
+p {
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 16px;
+}
 .container {
   max-width: 1300px;
   margin: 0 auto;
 }
 .page {
   padding: 50px 15px 15px;
+  overflow: hidden;
   &__wrap {
     padding-top: 25px;
   }
   &__title {
     display: inline-block;
     position: relative;
+    transform: translateX(-200px);
+    &--isActive {
+      transform: translateX(0);
+    }
     &::before {
       content: "";
       position: absolute;
@@ -80,13 +100,33 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 768px) {
+  .page {
+    padding: 50px 30px 15px;
+  }
   h1 {
     font-size: 36px;
   }
   h3 {
     font-size: 28px;
   }
+  h5 {
+    font-size: 22px;
+  }
   p {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    &__title {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (min-width: 1310px) {
+  .page {
+    padding: 50px 0 15px;
   }
 }

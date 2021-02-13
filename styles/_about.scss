@@ -1,7 +1,62 @@
 .about {
+  &__info {
+    margin-bottom: 30px;
+    p {
+      margin: 0 auto;
+    }
+  }
   h5 {
+    text-align: center;
+    margin-bottom: 30px;
     span {
       display: block;
+    }
+  }
+  &__tech {
+    ul {
+      h5 {
+        text-align: left;
+        margin: 10px 0;
+      }
+      li {
+        margin: 3px 0;
+      }
+      span {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    &__listsWrap {
+      @include flex(row, space-evenly, flex-start);
+      flex-direction: row-reverse;
+    }
+    &__info {
+      p {
+        text-align: center;
+        max-width: 90%;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .about {
+    h5 {
+      margin-bottom: 50px;
+    }
+    &__listsWrap {
+      @include flex(row, space-evenly, flex-start);
+      flex-direction: row-reverse;
+    }
+    &__info {
+      margin-bottom: 50px;
+      p {
+        text-align: center;
+        max-width: 75%;
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
   padding-top: 95px;
   &__wrap {
     @include flex(column, space-evenly, center);
-    height: calc(100vh - 100px);
+    height: calc(100vh - 95px);
     position: relative;
     overflow: hidden;
   }
@@ -25,7 +25,20 @@
   }
   &__image {
     height: 40%;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 120%;
+      width: 120%;
+      background-color: $main;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
     img {
+      position: relative;
       height: 100%;
       object-fit: contain;
     }
