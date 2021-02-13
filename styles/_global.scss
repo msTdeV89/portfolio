@@ -38,6 +38,7 @@ p {
     display: inline-block;
     position: relative;
     transform: translateX(-200px);
+    margin-bottom: 30px;
     &--isActive {
       transform: translateX(0);
     }
@@ -53,7 +54,7 @@ p {
   }
 }
 .shade {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

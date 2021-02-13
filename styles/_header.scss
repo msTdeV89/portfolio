@@ -28,12 +28,12 @@
     p {
       font-family: "Russo One", arial, sans-serif;
       font-size: 28px;
-      margin-left: 10px;
+      margin-left: 20px;
       color: $secondary;
+      display: none;
       span {
         color: grey;
       }
-      display: none;
     }
   }
   &__bars {

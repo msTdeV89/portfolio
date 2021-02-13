@@ -2,7 +2,7 @@
   padding-top: 95px;
   &__wrap {
     @include flex(column, space-evenly, center);
-    height: calc(100vh - 95px);
+    height: calc(90vh - 95px);
     position: relative;
     overflow: hidden;
   }
@@ -55,7 +55,7 @@
 @media (min-width: 768px) {
   .hero {
     &__wrap {
-      height: 75vh;
+      height: 78vh;
     }
     &__waves {
       height: 20%;

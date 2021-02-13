@@ -60,6 +60,7 @@ p {
   position: relative;
   -webkit-transform: translateX(-200px);
           transform: translateX(-200px);
+  margin-bottom: 30px;
 }
 
 .page__title--isActive {
@@ -78,7 +79,7 @@ p {
 }
 
 .shade {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -165,6 +166,10 @@ html::-webkit-scrollbar-thumb {
   .page {
     padding: 50px 0 15px;
   }
+}
+
+.about {
+  margin-top: 10vh;
 }
 
 .about__info {
@@ -306,7 +311,7 @@ html::-webkit-scrollbar-thumb {
 .header__logo p {
   font-family: "Russo One", arial, sans-serif;
   font-size: 28px;
-  margin-left: 10px;
+  margin-left: 20px;
   color: #68a7ff;
   display: none;
 }
@@ -395,7 +400,7 @@ html::-webkit-scrollbar-thumb {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: calc(100vh - 95px);
+  height: calc(90vh - 95px);
   position: relative;
   overflow: hidden;
 }
@@ -455,7 +460,7 @@ html::-webkit-scrollbar-thumb {
 
 @media (min-width: 768px) {
   .hero__wrap {
-    height: 75vh;
+    height: 78vh;
   }
   .hero__waves {
     height: 20%;
@@ -590,8 +595,8 @@ html::-webkit-scrollbar-thumb {
     right: 0;
     height: 4px;
     background-color: #68a7ff;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-120%);
+            transform: translateX(-120%);
     -webkit-transition: 0.275s ease-in-out;
     transition: 0.275s ease-in-out;
   }
@@ -601,6 +606,153 @@ html::-webkit-scrollbar-thumb {
   .menu-desktop a:hover::before {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+.portfolio__group {
+  margin-bottom: 30px;
+}
+
+.portfolio__group h5 {
+  margin-bottom: 60px;
+}
+
+.portfolio ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.project {
+  width: 320px;
+  border-radius: 10px;
+  background: #111111;
+  -webkit-box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #282828;
+          box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #282828;
+  margin: 0 10px 50px;
+}
+
+.project:hover .project__title,
+.project:hover .project__subtitle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project:hover .project__shade {
+  opacity: 0.2;
+}
+
+.project__image {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project__image img {
+  position: relative;
+  top: 0;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.project__title, .project__subtitle {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.project__title {
+  top: 40%;
+  font-size: 30px;
+}
+
+.project__subtitle {
+  text-align: center;
+  width: 90%;
+  top: 60%;
+}
+
+.project__shade {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.8;
+  background-color: #111111;
+}
+
+.project__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.project__btns .btn {
+  padding: 7.5px 0;
+  width: 45%;
+}
+
+.project__btns .btn span {
+  color: #68a7ff;
+}
+
+.project--app {
+  width: 250px;
+}
+
+.project--app .project__title {
+  width: 90%;
+  text-align: center;
+}
+
+.project--app .project__image {
+  height: 300px;
+}
+
+.project--app .project__image img {
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .project {
+    width: 500px;
+  }
+  .project--app {
+    width: 300px;
+  }
+  .project--app .project__image {
+    height: 450px;
+  }
+  .project--app .project__image img {
+    height: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

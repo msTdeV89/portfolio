@@ -69,7 +69,55 @@ const handleScrollEffect = function () {
     });
   });
 };
+const handleProjectsEffect = function () {
+  const projects = [...document.querySelectorAll(".project")];
+  projects.forEach((project) => {
+    let x = 0,
+      y = 0;
+    project.addEventListener("mousemove", (e) => {
+      const mouse = {
+        fTop: e.pageY,
+        fLeft: e.pageX,
+      };
+      const element = {
+        elFT: project.offsetTop,
+        elFL: project.offsetLeft,
+        elBFT: project.offsetTop + project.offsetHeight,
+        elBFL: project.offsetLeft + project.offsetWidth,
+        elMY: project.offsetHeight / 2,
+        elMX: project.offsetWidth / 2,
+      };
+      if (mouse.fTop < element.elFT + element.elMY) {
+        if (x < 7.5) {
+          x += 0.4;
+        }
+      }
+      if (mouse.fTop > element.elFT + element.elMY) {
+        if (x > -7.5) {
+          x -= 0.4;
+        }
+      }
+      if (mouse.fLeft < element.elFL + element.elMX) {
+        if (y > -7.5) {
+          y -= 0.4;
+        }
+      }
+      if (mouse.fLeft > element.elFL + element.elMX) {
+        if (y < 7.5) {
+          y += 0.4;
+        }
+      }
+      project.style.transform = `perspective(700px) rotateY(${y.toFixed()}deg) rotateX(${x.toFixed()}deg) scale3d(1, 1, 1)`;
+    });
+    project.addEventListener("mouseleave", () => {
+      project.style.transform = `perspective(700px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)`;
+    });
+  });
+};
 window.addEventListener("load", () => {
   handleMenu();
   handleScrollEffect();
+  if (window.innerWidth > 1024) {
+    handleProjectsEffect();
+  }
 });

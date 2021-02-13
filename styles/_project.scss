@@ -1,0 +1,89 @@
+.project {
+  width: 320px;
+  @include boxshadow;
+  margin: 0 10px 50px;
+  &:hover &__title,
+  &:hover &__subtitle {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:hover &__shade {
+    opacity: 0.2;
+  }
+  &__image {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+    img {
+      position: relative;
+      top: 0;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__title,
+  &__subtitle {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__title {
+    top: 40%;
+    font-size: 30px;
+  }
+  &__subtitle {
+    text-align: center;
+    width: 90%;
+    top: 60%;
+  }
+  &__shade {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.8;
+    background-color: $main;
+  }
+  &__btns {
+    @include flex(row, space-between, center);
+    padding: 20px;
+    .btn {
+      padding: 7.5px 0;
+      width: 45%;
+      span {
+        color: $secondary;
+      }
+    }
+  }
+}
+.project--app {
+  width: 250px;
+  .project__title {
+    width: 90%;
+    text-align: center;
+  }
+  .project__image {
+    height: 300px;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .project {
+    width: 500px;
+  }
+  .project--app {
+    width: 300px;
+    .project__image {
+      height: 450px;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

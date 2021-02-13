@@ -1,0 +1,12 @@
+.portfolio {
+  &__group {
+    margin-bottom: 30px;
+    h5 {
+      margin-bottom: 60px;
+    }
+  }
+  ul {
+    @include flex(row, space-evenly, center);
+    flex-wrap: wrap;
+  }
+}
