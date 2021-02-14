@@ -60,7 +60,7 @@ const handleScrollEffect = function () {
   const titles = [...document.querySelectorAll(".page__title")];
   const projects = [...document.querySelectorAll(".project")];
   const checkHigh = (el, c) => {
-    if (window.innerHeight + window.pageYOffset >= el.offsetTop + 100) {
+    if (window.innerHeight + window.pageYOffset >= el.offsetTop) {
       el.classList.add(c);
     }
   };
@@ -118,10 +118,24 @@ const handleProjectsEffect = function () {
     });
   });
 };
+const handleFormField = function () {
+  const fields = document.querySelectorAll(".contact__field");
+  fields.forEach((field) => {
+    field.addEventListener("change", (e) => {
+      const label = field.parentNode.querySelector("label");
+      if (e.target.value) {
+        label.classList.add("contact__field--isFilled");
+      } else {
+        label.classList.remove("contact__field--isFilled");
+      }
+    });
+  });
+};
 
 window.addEventListener("load", () => {
   handleMenu();
   handleScrollEffect();
+  handleFormField();
   if (window.innerWidth > 1024) {
     handleProjectsEffect();
   }

@@ -52,6 +52,14 @@
   }
 }
 
+@media (orientation: landscape) and (max-width: 768px) {
+  .hero {
+    &__wrap {
+      height: 130vh;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     &__wrap {

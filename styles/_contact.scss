@@ -5,7 +5,7 @@
   }
   form {
     @include flex(column, flex-start, center);
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
   }
   &__inputGroup {
@@ -16,7 +16,7 @@
   &__socials {
     @include flex(column, flex-start, flex-start);
     margin: 100px auto 20px;
-    max-width: 600px;
+    max-width: 500px;
     h5 {
       margin-bottom: 20px;
     }
@@ -38,10 +38,10 @@
       }
     }
   }
-  input,
-  textarea {
-    width: 100%;
-    margin: 10px 0 7.5px;
+
+  &__field {
+    width: 80%;
+    margin: 10px auto 7.5px;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 18px;
@@ -51,6 +51,9 @@
     outline: transparent;
     @include boxshadow;
     &:focus + label {
+      color: $secondary;
+    }
+    &--isFilled {
       color: $secondary;
     }
   }
@@ -70,9 +73,44 @@
   }
   &__label {
     order: -1;
+    margin-left: 10%;
   }
   .btn {
     margin: 30px 0;
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    .page__wrap {
+      @include flex(row, space-evenly, flex-start);
+    }
+
+    form {
+      @include flex(column, flex-start, center);
+      width: 80%;
+      max-width: 500px;
+      margin: 0;
+    }
+    input,
+    textarea {
+      width: 100%;
+    }
+    &__inputGroup {
+      @include flex(column, flex-start, flex-start);
+      width: 80%;
+      margin-bottom: 15px;
+    }
+    &__label {
+      order: -1;
+      margin-left: 0;
+    }
+    &__socials {
+      @include flex(column, flex-start, flex-start);
+      margin: 0;
+      width: 100%;
+      max-width: 500px;
+    }
   }
 }
